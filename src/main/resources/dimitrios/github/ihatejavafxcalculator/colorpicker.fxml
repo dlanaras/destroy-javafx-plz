@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="241.0" prefWidth="267.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="redButton" layoutX="29.0" layoutY="137.0" mnemonicParsing="false" onAction="#paintRed" text="Red" />
+      <Button fx:id="blueButton" layoutX="109.0" layoutY="137.0" mnemonicParsing="false" onAction="#paintBlue" text="Blue" />
+      <Button fx:id="greenButton" layoutX="179.0" layoutY="137.0" mnemonicParsing="false" onAction="#paintGreen" text="Green" />
+      <Button fx:id="resetButton" layoutX="108.0" layoutY="217.0" mnemonicParsing="false" onAction="#resetColor" text="Reset" />
+   </children>
+</AnchorPane>
