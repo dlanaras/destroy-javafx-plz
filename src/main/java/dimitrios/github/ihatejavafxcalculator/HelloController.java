@@ -56,7 +56,7 @@ public class HelloController {
         if(valuesEntered.size() == 1) {
             resultsText.setText(pressedButt.getText());
         } else {
-            if(!lastOperation.equals("")) { //pressing another number
+            if(!lastOperation.equals("")) {
                 try {
                     calculate(lastOperation, true);
                 } catch (InvalidOperationException e) {
@@ -84,7 +84,6 @@ public class HelloController {
         if(lastOperation.equals("")) {
             valuesEntered.add(resultsText.getText());
             preOperationNum = resultsText.getText();
-            System.out.println(resultsText.getText() + " CURRENT TEXT");
         }
         valuesEntered.add(pressedButt.getText());
 
@@ -228,7 +227,7 @@ public class HelloController {
     }
 
     private void handleCrossSlashDash() {
-        resultsText.setText("Function not implemented yet");
+        resultsText.setText(Double.toString(Double.parseDouble(resultsText.getText()) * -1));
     }
 
     private void handleEquals() throws DivisionByZeroException {
@@ -254,7 +253,7 @@ public class HelloController {
                 res = Double.parseDouble(preOperationNum) / Double.parseDouble(getValue(1));
                 break;
         }
-        resultsText.setText(Double.toString(res));
+        resultsText.setText(String.format("%.5f", res));
         valuesEntered.add(Double.toString(res));
     }
 
@@ -319,6 +318,7 @@ public class HelloController {
 
                         break;
                     case ENTER:
+                        focusOnEquals();
                         equals.fire();
 
                         break;
